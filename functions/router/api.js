@@ -38,15 +38,6 @@ router.route('/users')
         .post(function(req,res){
             var user = new User();
             user.name = req.body.name;
-
-            /*options = {
-                mode:'text',
-                args : user.name
-            };
-            python.run('kumu.py',options,function(err,results){
-                if(err) throw err;
-                res.send(results);
-            });*/
             user.save(function(err) {
                 if (err) res.send(err);
         // Use python-shell to generate deep learning responses
