@@ -2,12 +2,10 @@
 var express = require('express');
 var router = express.Router();
 var python = require('python-shell');
-
 //routes
 router.route('/')
       .get((req,res)=>{
-    /*
-    To exchange data between node.js and python
+    /*To exchange data between node.js and python
     pyshell.send('super');
     pyshell.on('message',function(message){
         res.send(message);
@@ -27,13 +25,12 @@ router.route('/')
           mode : 'text',
           args : req.body.data
       };
-      //console.log(req.params.ID);
       python.run('python-dir/kumu.py',options,function(err,results){
           if(err) throw err;
           res.send(results);
     });
 });
-
+/*
 router.route('/users')
         .post(function(req,res){
             var user = new User();
@@ -85,6 +82,6 @@ router.route('/users/:user_id')
                 res.json({message:'Successfully deleted'});
 
             });
-        });
+        });*/
 //Module Exports
 module.exports = router;

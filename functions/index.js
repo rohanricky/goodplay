@@ -8,8 +8,8 @@ var firebase = require("firebase-admin");
 
 // routes
 var app = express();
-app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}));
 
 app.use('/static',express.static('static'));
 app.get('/check',(req,res,next)=>{
