@@ -8,4 +8,4 @@ def add(data):
 
 if __name__ == '__main__':
     data = sys.argv[1]
-    add(data.lower())
+    add(data.lower())1
