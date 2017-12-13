@@ -2,8 +2,8 @@ import json
 import requests
 import sys
 
-URL = "https://personalssistantv1.firebaseapp.com"
-
+URL = "http://localhost:5000"
+#https://personalssistantv1.firebaseapp.com
 '''
 def get_url(url):
     response = requests.get(url)
@@ -24,7 +24,7 @@ def get_updates():
 '''
 def send_message(text):
     url = URL + "/api"
-    response = requests.post(url,json={"data":text})
+    response = requests.post(url,headers={'Content-Type': 'application/json'},data=json.dumps({"data":text}))
     print(response.text)
 
 if __name__=='__main__':

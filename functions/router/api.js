@@ -5,19 +5,7 @@ var python = require('python-shell');
 //routes
 router.route('/')
       .get((req,res)=>{
-    /*To exchange data between node.js and python
-    pyshell.send('super');
-    pyshell.on('message',function(message){
-        res.send(message);
-    });
-    pyshell.on('end',function(err){
-        if(err) throw err;
-        console.log('finished');
-    });
-    python.run('kumu.py',function(err,results){
-        if(err) res.send(err);
-        res.send(results);
-    });*/
+    // Register new users
     res.send("Good try");
   })
     .post((req,res)=>{
@@ -29,8 +17,27 @@ router.route('/')
           if(err) throw err;
           res.send(results);
     });
+    //res.send("Ended")
 });
+
+module.exports = router;
+//Important
+/*To exchange data between node.js and python
+pyshell.send('super');
+pyshell.on('message',function(message){
+    res.send(message);
+});
+pyshell.on('end',function(err){
+    if(err) throw err;
+    console.log('finished');
+});
+python.run('kumu.py',function(err,results){
+    if(err) res.send(err);
+    res.send(results);
+});*/
 /*
+Authentication & User tasks on Mongodb
+@deprecated
 router.route('/users')
         .post(function(req,res){
             var user = new User();
@@ -84,4 +91,3 @@ router.route('/users/:user_id')
             });
         });*/
 //Module Exports
-module.exports = router;
